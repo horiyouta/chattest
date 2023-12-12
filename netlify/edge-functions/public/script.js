@@ -17,7 +17,7 @@ const reloadChat = () => {
 }
 
 const getData = () => {
-    fetch(`http://localhost:8888`, {
+    fetch(`https://horiyouta-chattest.netlify.app/`, {
         method: `post`,
         headers: { 'Content-Type': `application/json` },
         body: JSON.stringify({ type: `get`, body: `` })
@@ -39,7 +39,7 @@ post.addEventListener(`click`, () => {
             myName = input.value;
             setTimeout(getData, 500);
         } else {
-            fetch(`http://localhost:8888`, {
+            fetch(`https://horiyouta-chattest.netlify.app/`, {
                 method: `post`,
                 headers: { 'Content-Type': `application/json` },
                 body: JSON.stringify({ type: `post`, body: { chat: input.value, user: myName } })
